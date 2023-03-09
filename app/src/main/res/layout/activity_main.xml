@@ -1,18 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<!--Divide the screen into upper(input), middle(units) and lower(output) parts-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:weightSum="5">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--User input value-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Enter title-->
+        <TextView
+            android:id="@+id/enterValue_text_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="start"
+            android:text="@string/enter_text"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!--Text box-->
+        <EditText
+            android:id="@+id/input_edit_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="15"
+            android:hint="@string/input_text"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!--Convert from title-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights">
+
+            <!--From sentence-->
+            <TextView
+                android:id="@+id/unit_text_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/from_text"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights">
+            <!--Select unit-->
+            <Spinner
+                android:id="@+id/unit_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Output-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--Convert button-->
+        <Button
+            android:id="@+id/convert_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="30dp"
+            android:drawableEnd="@drawable/convert"
+            android:gravity="center"
+            android:text="@string/convert_button"
+            android:textColor="@color/material_dynamic_neutral40"
+            android:textSize="20sp"
+            tools:ignore="VisualLintButtonSize" />
+
+        <!--Output-->
+        <TextView
+            android:id="@+id/output_text_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@string/output_text"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/outputValue_text_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:gravity="center"
+            android:text="@string/outputValue_text"
+            android:textSize="30sp" />
+
+        <!--Clear button-->
+        <Button
+            android:id="@+id/clear_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/clear_button"
+            android:textColor="@color/material_dynamic_neutral40"
+            android:textSize="20sp"
+            android:drawableEnd="@drawable/clear"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+
+</LinearLayout>

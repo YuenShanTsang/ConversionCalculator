@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ConversionCalculator</string>
+    <string name="enter_text">Enter value:</string>
+    <string name="input_text">Input number</string>
+    <string name="output_text">The converted value is:</string>
+    <string name="outputValue_text">0</string>
+    <string name="from_text">Convert from:</string>
+    <string name="convert_button">Convert unit</string>
+    <string name="clear_button">Clear</string>
+    <string-array name="unit_array">
+        <item>km to mi</item>
+        <item>mi to km</item>
+        <item>cm to in</item>
+        <item>in to cm</item>
+        <item>kg to lb</item>
+        <item>lb to kg</item>
+        <item>g to oz</item>
+        <item>oz to g</item>
+    </string-array>
 </resources>
