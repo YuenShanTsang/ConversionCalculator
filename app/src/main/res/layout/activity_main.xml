@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:weightSum="5">
 
-    <!--User input value-->
+    <!--Upper part: User input value-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <!--Enter title-->
+        <!--Title: Enter value-->
         <TextView
             android:id="@+id/enterValue_text_view"
             android:layout_width="fill_parent"
@@ -28,22 +28,23 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <!--Text box-->
+        <!--Edit text: Take user number input-->
         <EditText
             android:id="@+id/input_edit_text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:ems="15"
-            android:hint="@string/input_text"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp"
             android:padding="10dp"
+            android:minHeight="48dp"
+            android:ems="15"
+            android:hint="@string/input_editText"
+            android:inputType="numberDecimal"
+            android:importantForAutofill="no"
             tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
     </LinearLayout>
 
+    <!--Middle part: Convert unit-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,7 +53,7 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <!--Convert from title-->
+        <!--Middle left part-->
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
@@ -61,9 +62,9 @@
             android:orientation="vertical"
             tools:ignore="NestedWeights">
 
-            <!--From sentence-->
+            <!--Title: Convert from-->
             <TextView
-                android:id="@+id/unit_text_view"
+                android:id="@+id/convertFrom_text_view"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -73,24 +74,28 @@
 
         </LinearLayout>
 
+        <!--Middle right part-->
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical"
-            tools:ignore="NestedWeights">
+            android:orientation="vertical">
+
             <!--Select unit-->
             <Spinner
                 android:id="@+id/unit_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp" />
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:minHeight="48dp"
+                android:contentDescription="@string/unit_spinner"/>
         </LinearLayout>
 
     </LinearLayout>
 
-    <!--Output-->
+    <!--Lower part: Output-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
@@ -106,14 +111,14 @@
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:layout_marginBottom="30dp"
-            android:drawableEnd="@drawable/convert"
             android:gravity="center"
             android:text="@string/convert_button"
-            android:textColor="@color/material_dynamic_neutral40"
             android:textSize="20sp"
+            android:textColor="@color/material_dynamic_neutral40"
+            android:drawableEnd="@drawable/convert"
             tools:ignore="VisualLintButtonSize" />
 
-        <!--Output-->
+        <!--Output text-->
         <TextView
             android:id="@+id/output_text_view"
             android:layout_width="fill_parent"
@@ -123,6 +128,7 @@
             android:text="@string/output_text"
             android:textSize="30sp" />
 
+        <!--Output value-->
         <TextView
             android:id="@+id/outputValue_text_view"
             android:layout_width="fill_parent"
@@ -142,10 +148,11 @@
             android:layout_marginBottom="30dp"
             android:gravity="center"
             android:text="@string/clear_button"
-            android:textColor="@color/material_dynamic_neutral40"
             android:textSize="20sp"
+            android:textColor="@color/material_dynamic_neutral40"
             android:drawableEnd="@drawable/clear"
             tools:ignore="VisualLintButtonSize" />
+
     </LinearLayout>
 
 </LinearLayout>
