@@ -18,5 +18,7 @@
         <item>lb to kg</item>
         <item>g to oz</item>
         <item>oz to g</item>
+        <item>l to cups</item>
+        <item>cup to l</item>
     </string-array>
 </resources>
