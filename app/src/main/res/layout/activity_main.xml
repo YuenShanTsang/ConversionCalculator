@@ -28,7 +28,7 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <!--Edit text: Take user number input-->
+        <!--Edit text: Take user input number-->
         <EditText
             android:id="@+id/input_edit_text"
             android:layout_width="fill_parent"
